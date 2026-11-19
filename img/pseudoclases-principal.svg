@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300" font-family="Segoe UI, Arial, sans-serif">
+  <title>Pseudoclases y pseudoelementos: :hover y ::before</title>
+  <rect x="4" y="4" width="992" height="292" rx="22" fill="#C0BAB3"/>
+
+  <text x="50" y="80" font-size="34" font-weight="700" fill="#391214">Pseudoclases y</text>
+  <text x="50" y="120" font-size="34" font-weight="700" fill="#391214">pseudoelementos</text>
+
+  <rect x="50" y="150" width="470" height="100" rx="10" fill="#1F1415"/>
+  <text x="72" y="190" font-family="Consolas, monospace" font-size="21" fill="#C0BAB3">a<tspan fill="#E9C9A0">:hover</tspan> { color: #391214; }</text>
+  <text x="72" y="228" font-family="Consolas, monospace" font-size="21" fill="#C0BAB3">p<tspan fill="#E9C9A0">::before</tspan> { content: "★"; }</text>
+
+  <!-- Tarjeta :hover -->
+  <rect x="580" y="50" width="180" height="200" rx="14" fill="#A49B95"/>
+  <text x="670" y="85" text-anchor="middle" font-family="Consolas, monospace" font-size="22" font-weight="700" fill="#391214">:hover</text>
+  <rect x="610" y="115" width="120" height="48" rx="10" fill="#391214"/>
+  <text x="670" y="146" text-anchor="middle" font-size="19" fill="#F3EFEA">Enviar</text>
+  <path d="M690 150l26 11-11 4 8 12-6 4-8-12-8 9z" fill="#F3EFEA" stroke="#160F0C" stroke-width="2" stroke-linejoin="round"/>
+  <text x="670" y="225" text-anchor="middle" font-size="15" fill="#160F0C">un estado</text>
+
+  <!-- Tarjeta ::before -->
+  <rect x="780" y="50" width="180" height="200" rx="14" fill="#A49B95"/>
+  <text x="870" y="85" text-anchor="middle" font-family="Consolas, monospace" font-size="22" font-weight="700" fill="#391214">::before</text>
+  <rect x="800" y="117" width="40" height="44" rx="6" fill="none" stroke="#391214" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="820" y="150" text-anchor="middle" font-size="28" fill="#391214">★</text>
+  <text x="848" y="150" font-size="28" font-weight="700" fill="#160F0C">Hola</text>
+  <text x="870" y="225" text-anchor="middle" font-size="15" fill="#160F0C">una parte nueva</text>
+</svg>

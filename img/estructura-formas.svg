@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" font-family="Segoe UI, Arial, sans-serif">
+  <title>Tres formas de usar CSS: en línea, interno y externo</title>
+  <rect x="4" y="4" width="292" height="292" rx="18" fill="#C0BAB3"/>
+  <text x="150" y="36" text-anchor="middle" font-size="19" font-weight="700" fill="#391214">3 formas de usar CSS</text>
+
+  <g font-size="14" font-weight="700" fill="#391214">
+    <text x="22" y="68">1. En línea</text>
+    <text x="22" y="148">2. Interno</text>
+    <text x="22" y="228">3. Externo <tspan font-weight="400" fill="#52423D">(el mejor)</tspan></text>
+  </g>
+  <g font-family="Consolas, monospace" font-size="13" fill="#C0BAB3">
+    <rect x="20" y="76" width="260" height="36" rx="7" fill="#1F1415"/>
+    <text x="32" y="99">&lt;p <tspan fill="#E9C9A0">style</tspan>="color:red"&gt;</text>
+
+    <rect x="20" y="156" width="260" height="36" rx="7" fill="#1F1415"/>
+    <text x="32" y="179">&lt;<tspan fill="#E9C9A0">style</tspan>&gt; p { … } &lt;/style&gt;</text>
+
+    <rect x="20" y="236" width="260" height="36" rx="7" fill="#391214"/>
+    <text x="32" y="259">&lt;<tspan fill="#E9C9A0">link</tspan> href="styles.css"&gt;</text>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" font-family="Segoe UI, Arial, sans-serif">
+  <title>CSS fácil: cambia el tamaño de la letra</title>
+  <rect x="4" y="4" width="392" height="292" rx="18" fill="#C0BAB3"/>
+  <text x="200" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#391214">CSS fácil: el tamaño</text>
+
+  <rect x="30" y="60" width="340" height="46" rx="10" fill="#1F1415"/>
+  <text x="50" y="90" font-family="Consolas, monospace" font-size="18" fill="#C0BAB3">h1 { <tspan fill="#A49B95">font-size:</tspan> 40px; }</text>
+
+  <!-- Escalera de tamaños -->
+  <g fill="#391214" font-weight="700">
+    <text x="40" y="240" font-size="20">Aa</text>
+    <text x="85" y="240" font-size="34">Aa</text>
+    <text x="150" y="240" font-size="54">Aa</text>
+    <text x="245" y="240" font-size="84">Aa</text>
+  </g>
+  <line x1="35" y1="250" x2="365" y2="250" stroke="#887D77" stroke-width="2"/>
+  <g font-size="13" fill="#52423D" text-anchor="middle">
+    <text x="53" y="272">16px</text>
+    <text x="109" y="272">26px</text>
+    <text x="184" y="272">40px</text>
+    <text x="298" y="272">60px</text>
+  </g>
+</svg>

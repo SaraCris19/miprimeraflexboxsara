@@ -1,0 +1,330 @@
+/* =========================================================
+   Estilos compartidos por todas las páginas
+   (el index mantiene además sus estilos propios en <style>)
+   ========================================================= */
+
+/* ---------- Paleta (la misma del index) ---------- */
+.caja1  { background-color: #C0BAB3; }
+.caja2  { background-color: #A49B95; }
+.caja3  { background-color: #887D77; }
+.caja4  { background-color: #6D726D; }
+.caja5  { background-color: #52423D; }
+.caja6  { background-color: #472A2B; }
+.caja7  { background-color: #391214; }
+.caja8  { background-color: #2C1318; }
+.caja9  { background-color: #1F1415; }
+.caja10 { background-color: #160F0C; }
+
+/* ---------- Barra de navegación ---------- */
+.menu {
+    min-height: 100px;
+}
+
+.marca {
+    font-weight: 700;
+    color: #391214;
+}
+
+.marca:hover,
+.marca:focus {
+    color: #160F0C;
+}
+
+/* Icono de 3 rayas en el color de la paleta */
+.menu .navbar-toggler {
+    border-color: #391214;
+}
+
+.menu .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(57, 18, 20, .35);
+}
+
+.menu .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23391214' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Botones del menú: contorno oscuro, se rellenan al pasar el cursor
+   o cuando son la página actual */
+.btn-tema {
+    --bs-btn-color: #391214;
+    --bs-btn-border-color: #391214;
+    --bs-btn-hover-color: #F3EFEA;
+    --bs-btn-hover-bg: #391214;
+    --bs-btn-hover-border-color: #391214;
+    --bs-btn-active-color: #F3EFEA;
+    --bs-btn-active-bg: #391214;
+    --bs-btn-active-border-color: #391214;
+    --bs-btn-focus-shadow-rgb: 57, 18, 20;
+}
+
+.icono-nav {
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* El icono se vuelve claro cuando el botón se rellena */
+.btn-tema:hover .icono-nav,
+.btn-tema.active .icono-nav {
+    filter: brightness(0) invert(1);
+}
+
+/* ---------- Imágenes ---------- */
+.seccion-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
+
+.ilustracion {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ---------- Páginas de temas ---------- */
+.imagen-principal {
+    padding: 16px;
+}
+
+.imagen-principal .ilustracion,
+.imagen-lateral .ilustracion {
+    width: 100%;
+    height: auto;
+}
+
+.texto-tema {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px 24px;
+    color: #160F0C;
+}
+
+.texto-tema h1 {
+    color: #391214;
+    font-weight: 700;
+}
+
+.texto-tema code {
+    color: #391214;
+    font-weight: 700;
+}
+
+.texto-tema p {
+    margin-bottom: 0;
+    max-width: 62ch;
+    font-size: 1.05rem;
+}
+
+.imagen-lateral {
+    padding: 16px;
+}
+
+/* Cajas de ejemplo */
+.ejemplo {
+    min-height: 240px;
+    padding: 16px 14px;
+    color: #F3EFEA;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ejemplo-num {
+    font-size: .75rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: #A49B95;
+}
+
+.ejemplo h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.ejemplo pre {
+    margin: 0;
+    padding: 8px 10px;
+    background-color: rgba(255, 255, 255, .08);
+    border-left: 3px solid #A49B95;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: .8rem;
+    color: #E9E2DA;
+}
+
+.ejemplo p {
+    margin: 0;
+    font-size: .88rem;
+    line-height: 1.4;
+}
+
+.ejemplo code {
+    color: #E9C9A0;
+}
+
+.ejemplo pre code {
+    color: inherit;
+}
+
+.ejemplo b {
+    color: #FFFFFF;
+}
+
+.pie {
+    padding: 18px 24px;
+    color: #C0BAB3;
+    font-size: .9rem;
+}
+
+.pie a {
+    color: #E9C9A0;
+}
+
+/* Tamaños: computador (992px o más) */
+@media (min-width: 992px) {
+    .imagen-principal {
+        height: 300px;
+    }
+
+    .imagen-principal .ilustracion,
+    .imagen-lateral .ilustracion {
+        width: auto;
+        height: 100%;
+    }
+
+    .texto-tema,
+    .imagen-lateral {
+        height: 300px;
+    }
+
+    .texto-tema {
+        padding: 28px 48px;
+    }
+}
+
+/* Celular: cajas más compactas */
+@media (max-width: 767.98px) {
+    .imagen-principal,
+    .imagen-lateral {
+        padding: 8px;
+    }
+
+    .ejemplo {
+        min-height: 200px;
+        padding: 12px 10px;
+    }
+
+    .ejemplo pre {
+        font-size: .72rem;
+        padding: 6px 7px;
+    }
+
+    .ejemplo p {
+        font-size: .8rem;
+    }
+}
+
+/* ---------- Mini demostraciones (página de pseudoclases) ---------- */
+.demo {
+    margin-top: auto;
+    padding: 8px 10px;
+    background-color: #F3EFEA;
+    color: #160F0C;
+    border-radius: 6px;
+    font-size: .85rem;
+}
+
+.demo ul {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+
+.demo-first li:first-child { font-weight: 700; color: #391214; }
+.demo-last li:last-child { font-weight: 700; color: #391214; }
+.demo-nth li:nth-child(2n + 1) { background-color: #C0BAB3; }
+
+.demo-hover {
+    color: #52423D;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.demo-hover:hover,
+.demo-hover:focus {
+    color: #391214;
+    font-weight: 700;
+}
+
+.demo-input {
+    width: 100%;
+    padding: 4px 6px;
+    border: 2px solid #887D77;
+    border-radius: 4px;
+    font-size: .8rem;
+}
+
+.demo-focus:focus {
+    outline: 3px solid #887D77;
+    outline-offset: 2px;
+}
+
+.demo-invalid:invalid {
+    border-color: #B3261E;
+    background-color: #FBEAEA;
+}
+
+.demo-check:checked + label {
+    font-weight: 700;
+    color: #391214;
+}
+
+.demo-boton {
+    padding: 2px 8px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #391214;
+    color: #F3EFEA;
+    font-size: .8rem;
+}
+
+.demo-boton:disabled {
+    opacity: .5;
+}
+
+.demo-first-line::first-line {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #391214;
+}
+
+.demo-first-letter::first-letter {
+    font-size: 2em;
+    font-weight: 700;
+    color: #391214;
+}
+
+.demo-before::before {
+    content: "★ ";
+    color: #391214;
+}
+
+.demo-after::after {
+    content: " →";
+    color: #391214;
+}
+
+.demo-selection::selection {
+    background-color: #391214;
+    color: #F3EFEA;
+}
+
+.demo p {
+    margin: 0;
+    font-size: inherit;
+}

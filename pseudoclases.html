@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pseudoclases y elementos | CSS fácil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-12 caja1 menu navbar navbar-expand-lg p-3 p-lg-4" aria-label="Temas de CSS">
+                <div class="container-fluid px-0">
+                    <a class="navbar-brand marca d-lg-none" href="index.html">CSS fácil</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTemas"
+                        aria-controls="menuTemas" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="menuTemas">
+                        <div class="d-flex flex-column flex-lg-row flex-lg-wrap justify-content-lg-center gap-2 pt-3 pt-lg-0 w-100">
+                        <a href="index.html" class="btn btn-tema">
+                            <img src="img/icono-estructura.svg" alt="" class="icono-nav">
+                            Estructura y sintaxis
+                        </a>
+                        <a href="especificidad.html" class="btn btn-tema">
+                            <img src="img/icono-especificidad.svg" alt="" class="icono-nav">
+                            Niveles de especificidad
+                        </a>
+                        <a href="pseudoclases.html" class="btn btn-tema active" aria-current="page">
+                            <img src="img/icono-pseudoclases.svg" alt="" class="icono-nav">
+                            Pseudoclases y elementos
+                        </a>
+                        <a href="boxmodel.html" class="btn btn-tema">
+                            <img src="img/icono-boxmodel.svg" alt="" class="icono-nav">
+                            Box model
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Imagen principal (caja 2) -->
+            <header class="col-12 caja2 seccion-img imagen-principal">
+                <img src="img/pseudoclases-principal.svg" alt="Ejemplos de :hover en un botón y ::before agregando una estrella" class="ilustracion">
+            </header>
+
+            <!-- Texto: en computador a la izquierda de la imagen lateral -->
+            <section class="col-12 col-lg-8 caja1 texto-tema">
+                <h1>Pseudoclases y pseudoelementos</h1>
+                <p>Una pseudoclase (un solo <code>:</code>) selecciona un elemento cuando está en un estado concreto: el primero de su grupo, el que tiene el cursor encima o un campo con un dato no válido. Un pseudoelemento (doble <code>::</code>) actúa como si añadieras un elemento nuevo al HTML, como la primera línea de un párrafo o un contenido antes o después del texto.</p>
+            </section>
+
+            <!-- Imagen lateral: visible en computador y celular, oculta en tablet -->
+            <aside class="col-12 col-lg-4 caja3 seccion-img imagen-lateral d-md-none d-lg-flex">
+                <img src="img/pseudoclases-lateral.svg" alt="Un párrafo con ::first-letter y ::first-line resaltados" class="ilustracion">
+            </aside>
+
+            <!-- 18 cajas: 6 por fila en computador, 3 en tablet, 2 en celular -->
+            <article class="col-6 col-md-4 col-lg-2 caja5 ejemplo">
+                <span class="ejemplo-num">01</span>
+                <h2>¿Qué es una pseudoclase?</h2>
+                <pre><code>:nombre-pseudoclase</code></pre>
+                <p>Selecciona un elemento cuando está en un estado concreto, como si tuviera una clase extra. Se escribe con un solo <code>:</code>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja6 ejemplo">
+                <span class="ejemplo-num">02</span>
+                <h2>:first-child</h2>
+                <pre><code>article p:first-child {
+  font-weight: bold;
+}</code></pre>
+                <p>Elige el primer hijo de su grupo.</p>
+                <div class="demo"><ul class="demo-first"><li>Primero</li><li>Segundo</li><li>Tercero</li></ul></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja7 ejemplo">
+                <span class="ejemplo-num">03</span>
+                <h2>:last-child</h2>
+                <pre><code>li:last-child {
+  font-weight: bold;
+}</code></pre>
+                <p>Elige el último elemento entre sus hermanos.</p>
+                <div class="demo"><ul class="demo-last"><li>Primero</li><li>Segundo</li><li>Último</li></ul></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja8 ejemplo">
+                <span class="ejemplo-num">04</span>
+                <h2>:only-child</h2>
+                <pre><code>li:only-child {
+  font-style: italic;
+}</code></pre>
+                <p>Se aplica cuando el elemento no tiene hermanos: es hijo único.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja9 ejemplo">
+                <span class="ejemplo-num">05</span>
+                <h2>:nth-child()</h2>
+                <pre><code>li:nth-child(2n + 1) {
+  background: #C0BAB3;
+}</code></pre>
+                <p>Elige hermanos con una fórmula. <code>2n + 1</code> selecciona los impares.</p>
+                <div class="demo"><ul class="demo-nth"><li>Uno</li><li>Dos</li><li>Tres</li><li>Cuatro</li></ul></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja10 ejemplo">
+                <span class="ejemplo-num">06</span>
+                <h2>:hover</h2>
+                <pre><code>a:hover {
+  color: #391214;
+}</code></pre>
+                <p>Se activa cuando pasas el cursor por encima. Es una pseudoclase de acción del usuario.</p>
+                <div class="demo"><span class="demo-hover" tabindex="0">Pasa el cursor aquí</span></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja5 ejemplo">
+                <span class="ejemplo-num">07</span>
+                <h2>:focus</h2>
+                <pre><code>input:focus {
+  outline: 3px solid #887D77;
+}</code></pre>
+                <p>Se activa cuando el elemento recibe el foco, por ejemplo con el teclado.</p>
+                <div class="demo"><input class="demo-input demo-focus" type="text" placeholder="Haz clic aquí" aria-label="Prueba de :focus"></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja6 ejemplo">
+                <span class="ejemplo-num">08</span>
+                <h2>:invalid</h2>
+                <pre><code>input:invalid {
+  border-color: red;
+}</code></pre>
+                <p>Marca un campo de formulario cuyo valor no es válido.</p>
+                <div class="demo"><input class="demo-input demo-invalid" type="email" value="correo@" aria-label="Prueba de :invalid"></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja7 ejemplo">
+                <span class="ejemplo-num">09</span>
+                <h2>:checked</h2>
+                <pre><code>input:checked + label {
+  font-weight: bold;
+}</code></pre>
+                <p>Selecciona una casilla o botón de opción que está marcado.</p>
+                <div class="demo"><input type="checkbox" id="demoCheck" class="demo-check"> <label for="demoCheck">Márcame</label></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja8 ejemplo">
+                <span class="ejemplo-num">10</span>
+                <h2>:disabled</h2>
+                <pre><code>button:disabled {
+  opacity: .5;
+}</code></pre>
+                <p>Selecciona un elemento de formulario que está inactivo.</p>
+                <div class="demo"><button type="button" class="demo-boton">Activo</button> <button type="button" class="demo-boton" disabled>Inactivo</button></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja9 ejemplo">
+                <span class="ejemplo-num">11</span>
+                <h2>:not()</h2>
+                <pre><code>p:not(.nota) {
+  color: gray;
+}</code></pre>
+                <p>Selecciona los elementos que <b>no</b> coinciden con lo que pones entre paréntesis.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja10 ejemplo">
+                <span class="ejemplo-num">12</span>
+                <h2>¿Qué es un pseudoelemento?</h2>
+                <pre><code>::nombre-pseudoelemento</code></pre>
+                <p>Actúa como si agregaras un elemento nuevo al HTML. Se escribe con <code>::</code>; los antiguos usaban un solo <code>:</code>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja5 ejemplo">
+                <span class="ejemplo-num">13</span>
+                <h2>::first-line</h2>
+                <pre><code>p::first-line {
+  text-transform: uppercase;
+}</code></pre>
+                <p>Da estilo a la primera línea del párrafo, aunque cambie el ancho de la pantalla.</p>
+                <div class="demo"><p class="demo-first-line">La primera línea cambia y el resto del párrafo queda igual.</p></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja6 ejemplo">
+                <span class="ejemplo-num">14</span>
+                <h2>::first-letter</h2>
+                <pre><code>p::first-letter {
+  font-size: 2em;
+}</code></pre>
+                <p>Da estilo solo a la primera letra del elemento.</p>
+                <div class="demo"><p class="demo-first-letter">Había una vez</p></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja7 ejemplo">
+                <span class="ejemplo-num">15</span>
+                <h2>::before</h2>
+                <pre><code>p::before {
+  content: &quot;★ &quot;;
+}</code></pre>
+                <p>Inserta contenido antes del texto. Úsalo para iconos decorativos: algunos lectores de pantalla no lo leen.</p>
+                <div class="demo"><p class="demo-before">Favorito</p></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja8 ejemplo">
+                <span class="ejemplo-num">16</span>
+                <h2>::after</h2>
+                <pre><code>a::after {
+  content: &quot; →&quot;;
+}</code></pre>
+                <p>Inserta contenido después del texto. Siempre va con la propiedad <code>content</code>.</p>
+                <div class="demo"><p class="demo-after">Siguiente</p></div>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja9 ejemplo">
+                <span class="ejemplo-num">17</span>
+                <h2>Combinar ambos</h2>
+                <pre><code>article p:first-child::first-line {
+  font-size: 120%;
+  font-weight: bold;
+}</code></pre>
+                <p>Selecciona la primera línea del primer párrafo dentro de un <code>article</code>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja10 ejemplo">
+                <span class="ejemplo-num">18</span>
+                <h2>::selection</h2>
+                <pre><code>::selection {
+  background: #391214;
+  color: #F3EFEA;
+}</code></pre>
+                <p>Da estilo al texto que el usuario selecciona con el cursor.</p>
+                <div class="demo"><p class="demo-selection">Selecciona este texto</p></div>
+            </article>
+
+            <footer class="col-12 caja10 pie">
+                Fuente: <a href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Styling_basics/Pseudo_classes_and_elements" target="_blank" rel="noopener">MDN Web Docs — Pseudoclases y pseudoelementos</a>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

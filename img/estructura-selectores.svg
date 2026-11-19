@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300" font-family="Segoe UI, Arial, sans-serif">
+  <title>Selectores básicos: etiqueta, clase e id</title>
+  <rect x="4" y="4" width="292" height="292" rx="18" fill="#C0BAB3"/>
+  <text x="150" y="36" text-anchor="middle" font-size="19" font-weight="700" fill="#391214">Selectores básicos</text>
+
+  <!-- Etiqueta: todas -->
+  <rect x="20" y="58" width="84" height="36" rx="7" fill="#1F1415"/>
+  <text x="62" y="82" text-anchor="middle" font-family="Consolas, monospace" font-size="16" fill="#E9C9A0">p</text>
+  <g fill="#391214">
+    <rect x="120" y="64" width="24" height="24" rx="4"/><rect x="152" y="64" width="24" height="24" rx="4"/>
+    <rect x="184" y="64" width="24" height="24" rx="4"/><rect x="216" y="64" width="24" height="24" rx="4"/>
+    <rect x="248" y="64" width="24" height="24" rx="4"/>
+  </g>
+  <text x="120" y="112" font-size="13" fill="#52423D">etiqueta: todas las &lt;p&gt;</text>
+
+  <!-- Clase: varias -->
+  <rect x="20" y="134" width="84" height="36" rx="7" fill="#1F1415"/>
+  <text x="62" y="158" text-anchor="middle" font-family="Consolas, monospace" font-size="16" fill="#E9C9A0">.nota</text>
+  <g fill="none" stroke="#887D77" stroke-width="2">
+    <rect x="121" y="141" width="22" height="22" rx="4"/><rect x="185" y="141" width="22" height="22" rx="4"/>
+    <rect x="249" y="141" width="22" height="22" rx="4"/>
+  </g>
+  <g fill="#391214">
+    <rect x="152" y="140" width="24" height="24" rx="4"/><rect x="216" y="140" width="24" height="24" rx="4"/>
+  </g>
+  <text x="120" y="188" font-size="13" fill="#52423D">clase: las que la tengan</text>
+
+  <!-- ID: uno solo -->
+  <rect x="20" y="210" width="84" height="36" rx="7" fill="#1F1415"/>
+  <text x="62" y="234" text-anchor="middle" font-family="Consolas, monospace" font-size="16" fill="#E9C9A0">#menu</text>
+  <g fill="none" stroke="#887D77" stroke-width="2">
+    <rect x="121" y="217" width="22" height="22" rx="4"/><rect x="153" y="217" width="22" height="22" rx="4"/>
+    <rect x="217" y="217" width="22" height="22" rx="4"/><rect x="249" y="217" width="22" height="22" rx="4"/>
+  </g>
+  <rect x="184" y="216" width="24" height="24" rx="4" fill="#391214"/>
+  <text x="120" y="264" font-size="13" fill="#52423D">id: uno solo en la página</text>
+</svg>

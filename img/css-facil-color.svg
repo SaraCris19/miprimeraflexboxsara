@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" font-family="Segoe UI, Arial, sans-serif">
+  <title>CSS fácil: cambia el color de un texto</title>
+  <rect x="4" y="4" width="392" height="292" rx="18" fill="#C0BAB3"/>
+  <text x="200" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#391214">CSS fácil: el color</text>
+
+  <!-- Código -->
+  <rect x="30" y="60" width="340" height="70" rx="10" fill="#1F1415"/>
+  <text x="50" y="90" font-family="Consolas, monospace" font-size="18" fill="#C0BAB3">p {</text>
+  <text x="70" y="116" font-family="Consolas, monospace" font-size="18" fill="#A49B95">color: <tspan fill="#C0BAB3">#391214;</tspan> }</text>
+  <rect x="320" y="102" width="16" height="16" rx="3" fill="#391214" stroke="#C0BAB3"/>
+
+  <!-- Antes / después -->
+  <rect x="30" y="150" width="155" height="120" rx="10" fill="#A49B95"/>
+  <text x="107" y="178" text-anchor="middle" font-size="14" fill="#52423D">Antes</text>
+  <text x="107" y="230" text-anchor="middle" font-size="34" font-weight="700" fill="#6D726D">Hola</text>
+
+  <path d="M192 210h14m-6-6 6 6-6 6" stroke="#391214" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="215" y="150" width="155" height="120" rx="10" fill="#A49B95"/>
+  <text x="292" y="178" text-anchor="middle" font-size="14" fill="#52423D">Después</text>
+  <text x="292" y="230" text-anchor="middle" font-size="34" font-weight="700" fill="#391214">Hola</text>
+</svg>

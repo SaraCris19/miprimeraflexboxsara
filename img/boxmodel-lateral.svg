@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" font-family="Segoe UI, Arial, sans-serif">
+  <title>Modelo estándar 410px frente a border-box 350px</title>
+  <rect x="4" y="4" width="392" height="292" rx="18" fill="#C0BAB3"/>
+  <text x="200" y="38" text-anchor="middle" font-size="21" font-weight="700" fill="#391214">¿Cuánto mide la caja?</text>
+
+  <!-- Estándar: 410px -->
+  <text x="30" y="70" font-size="15" font-weight="700" fill="#391214">Estándar (content-box)</text>
+  <rect x="30" y="80" width="340" height="52" rx="4" fill="#52423D"/>
+  <rect x="55" y="89" width="290" height="34" fill="#F3EFEA"/>
+  <text x="200" y="112" text-anchor="middle" font-size="15" fill="#160F0C">contenido 350px</text>
+  <text x="30" y="152" font-size="14" fill="#52423D">350 + 50 + 10 = <tspan font-weight="700" fill="#391214">410px</tspan></text>
+
+  <!-- border-box: 350px -->
+  <text x="30" y="188" font-size="15" font-weight="700" fill="#391214">Alternativo (border-box)</text>
+  <rect x="30" y="198" width="290" height="52" rx="4" fill="#52423D"/>
+  <rect x="55" y="207" width="240" height="34" fill="#F3EFEA"/>
+  <text x="175" y="230" text-anchor="middle" font-size="15" fill="#160F0C">contenido 290px</text>
+  <text x="30" y="272" font-size="14" fill="#52423D">ocupa <tspan font-weight="700" fill="#391214">350px</tspan> en total</text>
+</svg>

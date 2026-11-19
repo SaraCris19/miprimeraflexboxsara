@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="600" height="300" font-family="Segoe UI, Arial, sans-serif">
+  <title>Unidades de medida en CSS: px, %, em y rem</title>
+  <rect x="4" y="4" width="592" height="292" rx="18" fill="#C0BAB3"/>
+  <text x="300" y="40" text-anchor="middle" font-size="21" font-weight="700" fill="#391214">Unidades de medida</text>
+
+  <g text-anchor="middle">
+    <rect x="22" y="60" width="128" height="212" rx="12" fill="#1F1415"/>
+    <text x="86" y="118" font-size="38" font-weight="700" fill="#E9C9A0">px</text>
+    <text x="86" y="156" font-size="14" fill="#F3EFEA">medida fija</text>
+    <text x="86" y="175" font-size="14" fill="#F3EFEA">en pantalla</text>
+    <text x="86" y="244" font-family="Consolas, monospace" font-size="15" fill="#A49B95">16px</text>
+
+    <rect x="164" y="60" width="128" height="212" rx="12" fill="#2C1318"/>
+    <text x="228" y="118" font-size="38" font-weight="700" fill="#E9C9A0">%</text>
+    <text x="228" y="156" font-size="14" fill="#F3EFEA">parte de su</text>
+    <text x="228" y="175" font-size="14" fill="#F3EFEA">contenedor</text>
+    <text x="228" y="244" font-family="Consolas, monospace" font-size="15" fill="#A49B95">50%</text>
+
+    <rect x="306" y="60" width="128" height="212" rx="12" fill="#391214"/>
+    <text x="370" y="118" font-size="38" font-weight="700" fill="#E9C9A0">em</text>
+    <text x="370" y="156" font-size="14" fill="#F3EFEA">según la letra</text>
+    <text x="370" y="175" font-size="14" fill="#F3EFEA">del padre</text>
+    <text x="370" y="244" font-family="Consolas, monospace" font-size="15" fill="#A49B95">1.5em</text>
+
+    <rect x="448" y="60" width="128" height="212" rx="12" fill="#52423D"/>
+    <text x="512" y="118" font-size="38" font-weight="700" fill="#E9C9A0">rem</text>
+    <text x="512" y="156" font-size="14" fill="#F3EFEA">según la letra</text>
+    <text x="512" y="175" font-size="14" fill="#F3EFEA">del &lt;html&gt;</text>
+    <text x="512" y="244" font-family="Consolas, monospace" font-size="15" fill="#A49B95">2rem</text>
+  </g>
+</svg>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Box model | CSS fácil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-12 caja1 menu navbar navbar-expand-lg p-3 p-lg-4" aria-label="Temas de CSS">
+                <div class="container-fluid px-0">
+                    <a class="navbar-brand marca d-lg-none" href="index.html">CSS fácil</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTemas"
+                        aria-controls="menuTemas" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="menuTemas">
+                        <div class="d-flex flex-column flex-lg-row flex-lg-wrap justify-content-lg-center gap-2 pt-3 pt-lg-0 w-100">
+                        <a href="index.html" class="btn btn-tema">
+                            <img src="img/icono-estructura.svg" alt="" class="icono-nav">
+                            Estructura y sintaxis
+                        </a>
+                        <a href="especificidad.html" class="btn btn-tema">
+                            <img src="img/icono-especificidad.svg" alt="" class="icono-nav">
+                            Niveles de especificidad
+                        </a>
+                        <a href="pseudoclases.html" class="btn btn-tema">
+                            <img src="img/icono-pseudoclases.svg" alt="" class="icono-nav">
+                            Pseudoclases y elementos
+                        </a>
+                        <a href="boxmodel.html" class="btn btn-tema active" aria-current="page">
+                            <img src="img/icono-boxmodel.svg" alt="" class="icono-nav">
+                            Box model
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Imagen principal (caja 2) -->
+            <header class="col-12 caja2 seccion-img imagen-principal">
+                <img src="img/boxmodel-principal.svg" alt="Las capas del box model: margin, border, padding y contenido" class="ilustracion">
+            </header>
+
+            <!-- Texto: en computador a la izquierda de la imagen lateral -->
+            <section class="col-12 col-lg-8 caja1 texto-tema">
+                <h1>Box model: el modelo de caja</h1>
+                <p>En CSS todo elemento es una caja con cuatro capas: el contenido, el padding (relleno), el border (borde) y el margin (margen). Las cajas pueden ser de bloque, que ocupan toda la línea, o en línea, que fluyen con el texto. Entender cómo se suman estas capas te dice cuánto mide de verdad cada elemento.</p>
+            </section>
+
+            <!-- Imagen lateral: visible en computador y celular, oculta en tablet -->
+            <aside class="col-12 col-lg-4 caja3 seccion-img imagen-lateral d-md-none d-lg-flex">
+                <img src="img/boxmodel-lateral.svg" alt="Comparación del modelo estándar (410px) y border-box (350px)" class="ilustracion">
+            </aside>
+
+            <!-- 18 cajas: 6 por fila en computador, 3 en tablet, 2 en celular -->
+            <article class="col-6 col-md-4 col-lg-2 caja5 ejemplo">
+                <span class="ejemplo-num">01</span>
+                <h2>Las 4 capas</h2>
+                <pre><code>contenido
+→ padding
+→ border
+→ margin</code></pre>
+                <p>Toda caja tiene, de adentro hacia afuera: contenido, relleno, borde y margen.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja6 ejemplo">
+                <span class="ejemplo-num">02</span>
+                <h2>Contenido</h2>
+                <pre><code>.box {
+  width: 350px;
+  height: 150px;
+}</code></pre>
+                <p>Es donde se muestra el contenido. Se mide con <code>width</code> y <code>height</code>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja7 ejemplo">
+                <span class="ejemplo-num">03</span>
+                <h2>Padding</h2>
+                <pre><code>.box {
+  padding: 25px;
+}</code></pre>
+                <p>Espacio entre el contenido y el borde. El fondo se ve detrás y <b>no</b> puede ser negativo.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja8 ejemplo">
+                <span class="ejemplo-num">04</span>
+                <h2>Border</h2>
+                <pre><code>.box {
+  border: 5px solid black;
+}</code></pre>
+                <p>Envuelve al contenido y al padding. Está entre el padding y el margin.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja9 ejemplo">
+                <span class="ejemplo-num">05</span>
+                <h2>Margin</h2>
+                <pre><code>.box {
+  margin: 10px;
+}</code></pre>
+                <p>Espacio invisible por fuera del borde que aleja a los demás elementos.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja10 ejemplo">
+                <span class="ejemplo-num">06</span>
+                <h2>Modelo estándar</h2>
+                <pre><code>width: 350px;
+padding: 25px;
+border: 5px solid;</code></pre>
+                <p>Es el del navegador por defecto. Ancho real: 350 + 25 + 25 + 5 + 5 = <b>410px</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja5 ejemplo">
+                <span class="ejemplo-num">07</span>
+                <h2>Modelo alternativo</h2>
+                <pre><code>.box {
+  box-sizing: border-box;
+}</code></pre>
+                <p>Con la misma caja, el ancho visible es <b>350px</b>: el padding y el borde se restan del contenido.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja6 ejemplo">
+                <span class="ejemplo-num">08</span>
+                <h2>border-box para todo</h2>
+                <pre><code>html { box-sizing: border-box; }
+*, *::before, *::after {
+  box-sizing: inherit;
+}</code></pre>
+                <p>Truco común: todos los elementos heredan el modelo alternativo.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja7 ejemplo">
+                <span class="ejemplo-num">09</span>
+                <h2>Cajas de bloque</h2>
+                <pre><code>p, h1 {
+  display: block;
+}</code></pre>
+                <p>Empiezan en una línea nueva, respetan <code>width</code> y <code>height</code> y ocupan todo el ancho.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja8 ejemplo">
+                <span class="ejemplo-num">10</span>
+                <h2>Cajas en línea</h2>
+                <pre><code>span, a, em {
+  display: inline;
+}</code></pre>
+                <p>No saltan de línea e ignoran <code>width</code>, <code>height</code> y los márgenes de arriba y abajo.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja9 ejemplo">
+                <span class="ejemplo-num">11</span>
+                <h2>Display externo e interno</h2>
+                <pre><code>ul {
+  display: flex;
+}</code></pre>
+                <p>La lista sigue siendo de bloque por fuera, pero sus <code>li</code> se ordenan en fila por dentro.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja10 ejemplo">
+                <span class="ejemplo-num">12</span>
+                <h2>inline-flex</h2>
+                <pre><code>ul {
+  display: inline-flex;
+}</code></pre>
+                <p>Por fuera se comporta en línea y por dentro sus hijos son elementos flex.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja5 ejemplo">
+                <span class="ejemplo-num">13</span>
+                <h2>inline-block</h2>
+                <pre><code>span {
+  display: inline-block;
+  width: 80px;
+}</code></pre>
+                <p>No salta de línea, pero sí respeta <code>width</code>, <code>height</code>, padding y margin.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja6 ejemplo">
+                <span class="ejemplo-num">14</span>
+                <h2>Fusión de márgenes</h2>
+                <pre><code>.one { margin-bottom: 50px; }
+.two { margin-top: 30px; }</code></pre>
+                <p>Dos márgenes verticales que se tocan se fusionan: el espacio es <b>50px</b> (el mayor), no 80px.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja7 ejemplo">
+                <span class="ejemplo-num">15</span>
+                <h2>Margen negativo</h2>
+                <pre><code>.two {
+  margin-top: -10px;
+}</code></pre>
+                <p>Si uno es negativo se resta: el espacio queda en 50 − 10 = <b>40px</b>. Puede superponer cajas.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja8 ejemplo">
+                <span class="ejemplo-num">16</span>
+                <h2>Borde por lado</h2>
+                <pre><code>.container {
+  border-top: 5px dotted green;
+  border-bottom: 20px double;
+}</code></pre>
+                <p>Da ancho, estilo y color a un solo lado: <code>-top</code>, <code>-right</code>, <code>-bottom</code> o <code>-left</code>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja9 ejemplo">
+                <span class="ejemplo-num">17</span>
+                <h2>Propiedades largas</h2>
+                <pre><code>.box {
+  border-top-style: dotted;
+  border-right-width: 20px;
+  border-bottom-color: hotpink;
+}</code></pre>
+                <p>Cambian una sola propiedad de un solo lado del borde.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja10 ejemplo">
+                <span class="ejemplo-num">18</span>
+                <h2>Enlaces fáciles de tocar</h2>
+                <pre><code>.links-list a {
+  padding: 1em 2em;
+  display: inline-block;
+}</code></pre>
+                <p>Con <code>inline-block</code> el padding del enlace se respeta y crece el área para hacer clic.</p>
+            </article>
+
+            <footer class="col-12 caja10 pie">
+                Fuente: <a href="https://developer-mozilla-org.translate.goog/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model?_x_tr_sl=en&amp;_x_tr_tl=es&amp;_x_tr_hl=es&amp;_x_tr_pto=tc" target="_blank" rel="noopener">MDN Web Docs — The box model</a>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

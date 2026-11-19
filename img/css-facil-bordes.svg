@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" width="440" height="300" font-family="Segoe UI, Arial, sans-serif">
+  <title>CSS fácil: bordes redondeados y sombras</title>
+  <defs>
+    <filter id="sombra" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="6" dy="8" stdDeviation="6" flood-color="#160F0C" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+  <rect x="4" y="4" width="432" height="292" rx="18" fill="#C0BAB3"/>
+  <text x="220" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#391214">CSS fácil: bordes y sombras</text>
+
+  <rect x="30" y="58" width="380" height="70" rx="10" fill="#1F1415"/>
+  <text x="48" y="86" font-family="Consolas, monospace" font-size="16" fill="#C0BAB3"><tspan fill="#A49B95">border-radius:</tspan> 20px;</text>
+  <text x="48" y="112" font-family="Consolas, monospace" font-size="16" fill="#C0BAB3"><tspan fill="#A49B95">box-shadow:</tspan> 6px 8px 12px #160F0C;</text>
+
+  <!-- Caja cuadrada sin sombra -->
+  <rect x="60" y="160" width="130" height="95" fill="#887D77"/>
+  <text x="125" y="282" text-anchor="middle" font-size="14" fill="#52423D">Antes</text>
+
+  <path d="M205 208h24m-8-8 8 8-8 8" stroke="#391214" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Caja redondeada con sombra -->
+  <rect x="250" y="160" width="130" height="95" rx="22" fill="#52423D" filter="url(#sombra)"/>
+  <text x="315" y="282" text-anchor="middle" font-size="14" fill="#52423D">Después</text>
+</svg>

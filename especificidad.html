@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Niveles de especificidad | CSS fácil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-12 caja1 menu navbar navbar-expand-lg p-3 p-lg-4" aria-label="Temas de CSS">
+                <div class="container-fluid px-0">
+                    <a class="navbar-brand marca d-lg-none" href="index.html">CSS fácil</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuTemas"
+                        aria-controls="menuTemas" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="menuTemas">
+                        <div class="d-flex flex-column flex-lg-row flex-lg-wrap justify-content-lg-center gap-2 pt-3 pt-lg-0 w-100">
+                        <a href="index.html" class="btn btn-tema">
+                            <img src="img/icono-estructura.svg" alt="" class="icono-nav">
+                            Estructura y sintaxis
+                        </a>
+                        <a href="especificidad.html" class="btn btn-tema active" aria-current="page">
+                            <img src="img/icono-especificidad.svg" alt="" class="icono-nav">
+                            Niveles de especificidad
+                        </a>
+                        <a href="pseudoclases.html" class="btn btn-tema">
+                            <img src="img/icono-pseudoclases.svg" alt="" class="icono-nav">
+                            Pseudoclases y elementos
+                        </a>
+                        <a href="boxmodel.html" class="btn btn-tema">
+                            <img src="img/icono-boxmodel.svg" alt="" class="icono-nav">
+                            Box model
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Imagen principal (caja 2) -->
+            <header class="col-12 caja2 seccion-img imagen-principal">
+                <img src="img/especificidad-principal.svg" alt="El selector #menu .item:hover a tiene especificidad 1, 2, 1" class="ilustracion">
+            </header>
+
+            <!-- Texto: en computador a la izquierda de la imagen lateral -->
+            <section class="col-12 col-lg-8 caja1 texto-tema">
+                <h1>Niveles de especificidad</h1>
+                <p>Cuando dos reglas CSS le dan estilos distintos al mismo elemento, el navegador no elige la que está más abajo: elige la más específica. Cada selector recibe una puntuación A,B,C: A cuenta los <code>#id</code>, B las <code>.clases</code>, <code>[atributos]</code> y <code>:pseudoclases</code>, y C las etiquetas y <code>::pseudoelementos</code>. Gana el valor más alto.</p>
+            </section>
+
+            <!-- Imagen lateral: visible en computador y celular, oculta en tablet -->
+            <aside class="col-12 col-lg-4 caja3 seccion-img imagen-lateral d-md-none d-lg-flex">
+                <img src="img/especificidad-lateral.svg" alt="Un ID gana a una clase en especificidad" class="ilustracion">
+            </aside>
+
+            <!-- 18 cajas: 6 por fila en computador, 3 en tablet, 2 en celular -->
+            <article class="col-6 col-md-4 col-lg-2 caja5 ejemplo">
+                <span class="ejemplo-num">01</span>
+                <h2>Selector de etiqueta</h2>
+                <pre><code>div { }</code></pre>
+                <p>Una etiqueta suma 1 en la columna C. Especificidad: <b>0,0,1</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja6 ejemplo">
+                <span class="ejemplo-num">02</span>
+                <h2>Dos etiquetas</h2>
+                <pre><code>div div { }</code></pre>
+                <p>Cada etiqueta suma 1 en C. Especificidad: <b>0,0,2</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja7 ejemplo">
+                <span class="ejemplo-num">03</span>
+                <h2>Una clase</h2>
+                <pre><code>.container { }</code></pre>
+                <p>Las clases suman en la columna B. Especificidad: <b>0,1,0</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja8 ejemplo">
+                <span class="ejemplo-num">04</span>
+                <h2>Dos clases</h2>
+                <pre><code>.container .item { }</code></pre>
+                <p>Dos clases, dos puntos en B. Especificidad: <b>0,2,0</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja9 ejemplo">
+                <span class="ejemplo-num">05</span>
+                <h2>Selector de atributo</h2>
+                <pre><code>input[type=&quot;text&quot;] { }</code></pre>
+                <p>Un <code>[atributo]</code> cuenta como una clase (B) y la etiqueta suma en C: <b>0,1,1</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja10 ejemplo">
+                <span class="ejemplo-num">06</span>
+                <h2>Un ID</h2>
+                <pre><code>#pagina div { }</code></pre>
+                <p>Un ID suma en la columna A, la más fuerte. Especificidad: <b>1,0,1</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja5 ejemplo">
+                <span class="ejemplo-num">07</span>
+                <h2>ID + pseudoclase</h2>
+                <pre><code>#pagina div:hover { }</code></pre>
+                <p><code>:hover</code> es una pseudoclase y suma en B: <b>1,1,1</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja6 ejemplo">
+                <span class="ejemplo-num">08</span>
+                <h2>Selector largo</h2>
+                <pre><code>#pagina div:hover a { }</code></pre>
+                <p>Un ID, una pseudoclase y dos etiquetas: <b>1,1,2</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja7 ejemplo">
+                <span class="ejemplo-num">09</span>
+                <h2>Con combinador</h2>
+                <pre><code>#pagina .sel:hover &gt; a { }</code></pre>
+                <p>El combinador <code>&gt;</code> no suma nada. Resultado: <b>1,2,1</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja8 ejemplo">
+                <span class="ejemplo-num">10</span>
+                <h2>Pseudoelemento</h2>
+                <pre><code>p::first-line { }</code></pre>
+                <p>Los <code>::pseudoelementos</code> cuentan como etiquetas (C): <b>0,0,2</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja9 ejemplo">
+                <span class="ejemplo-num">11</span>
+                <h2>La fórmula A,B,C</h2>
+                <pre><code>A = #ids
+B = .clases [atributos] :pseudoclases
+C = etiquetas ::pseudoelementos</code></pre>
+                <p>Cuenta cuántos hay de cada tipo. Las DevTools del navegador también te muestran el valor.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja10 ejemplo">
+                <span class="ejemplo-num">12</span>
+                <h2>¿Quién gana?</h2>
+                <pre><code>#element { background: indigo; }
+.container { background: red; }</code></pre>
+                <p>Si el <code>div</code> tiene los dos, gana <code>#element</code> (1,0,0 contra 0,1,0): el fondo es índigo.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja5 ejemplo">
+                <span class="ejemplo-num">13</span>
+                <h2>Se compara por columnas</h2>
+                <pre><code>#menu       → 1,0,0
+.a .b .c .d → 0,4,0</code></pre>
+                <p>Primero se compara A; si empatan, B; luego C. Un ID vence a cualquier cantidad de clases.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja6 ejemplo">
+                <span class="ejemplo-num">14</span>
+                <h2>El orden no manda</h2>
+                <pre><code>#titulo { color: green; }
+h1 { color: red; }</code></pre>
+                <p>Aunque <code>h1</code> esté más abajo, el título queda verde. El orden solo decide cuando hay empate.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja7 ejemplo">
+                <span class="ejemplo-num">15</span>
+                <h2>:is()</h2>
+                <pre><code>.container :is(.item, #unique) { }</code></pre>
+                <p>Toma la especificidad de su argumento más específico (<code>#unique</code>): <b>1,1,0</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja8 ejemplo">
+                <span class="ejemplo-num">16</span>
+                <h2>:not()</h2>
+                <pre><code>.container :not(.item) { }</code></pre>
+                <p>Usa la especificidad de lo que tiene dentro: <b>0,2,0</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja9 ejemplo">
+                <span class="ejemplo-num">17</span>
+                <h2>:has()</h2>
+                <pre><code>.container:has(.item) { }</code></pre>
+                <p>También suma su argumento más específico: <b>0,2,0</b>.</p>
+            </article>
+            <article class="col-6 col-md-4 col-lg-2 caja10 ejemplo">
+                <span class="ejemplo-num">18</span>
+                <h2>:where()</h2>
+                <pre><code>.container :where(.item) { }</code></pre>
+                <p><code>:where()</code> siempre vale 0, tenga lo que tenga dentro: <b>0,1,0</b>.</p>
+            </article>
+
+            <footer class="col-12 caja10 pie">
+                Fuente: <a href="https://lenguajecss.com/cascada-css/especificidad/especificidad-css/" target="_blank" rel="noopener">lenguajecss.com — Especificidad CSS</a>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
